@@ -25,13 +25,7 @@ public class StudentsInfo {
         }
         for (int i = 0; i < 5; i++) {
             Student student = new Student();
-            student.id = Integer.parseInt(sc.nextLine());
-            student.name = sc.nextLine();
-            student.age = Integer.parseInt(sc.nextLine());
-            student.gender = sc.nextLine().charAt(0);
-            student.school = sc.nextLine();
-            student.program = sc.nextLine();
-            student.nationality = sc.nextLine();
+            student.deserialize(sc.nextLine());
             sts[i]=student;
         }
         return sts;

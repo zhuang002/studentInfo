@@ -28,5 +28,22 @@ class Student {
         System.out.println("program:"+this.program);
         System.out.println("nationality:"+this.nationality);
     }
+
+    void deserialize(String sStudent) {
+        String[] fields=sStudent.split("&");
+       this.id=Integer.parseInt(fields[0]);
+       this.name = fields[1];
+       this.age = Integer.parseInt(fields[2]);
+       this.gender = fields[3].charAt(0);
+       this.school= fields[4];
+       this.program = fields[5];
+       this.nationality = fields[6];
+    }
+    
+    String serialize() {
+        String sRet=
+            this.id+"&"+this.name+"&"+this.age+"&"+this.gender+"&"+this.school+"&"+this.program+"&"+this.nationality;
+        return sRet;
+    }
     
 }
